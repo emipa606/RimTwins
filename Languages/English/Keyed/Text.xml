@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RiTw.MultipleBabies>{0} gave birth to {1} babies!</RiTw.MultipleBabies>
+  <RiTw.SingleBaby>{0} gave birth to a baby!</RiTw.SingleBaby>
+  <RiTw.OneMoreChance>Recursive chance of another child born: {0}</RiTw.OneMoreChance>
+  <RiTw.OneMoreChanceTT>The chance that an extra child will be born. This will be calculated again after each extra child.</RiTw.OneMoreChanceTT>
+  <RiTw.ModVersion>Installed mod-version: {0}</RiTw.ModVersion>
+</LanguageData>

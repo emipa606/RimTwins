@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GeneDef>
+    <defName>MultipleBirths</defName>
+    <label>multiple births</label>
+    <description>Carriers of this gene have a higher chance of birthing multiple children.</description>
+    <displayCategory>Reproduction</displayCategory>
+    <iconPath>UI/Icons/Genes/Gene_MultipleBirths</iconPath>
+    <displayOrderInCategory>120</displayOrderInCategory>
+  </GeneDef>
+</Defs>
