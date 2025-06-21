@@ -24,7 +24,7 @@ public static class Hediff_Pregnant_DoBirthSpawn
 
         currentlySpawning = true;
         var num = 1;
-        var extraChance = RimTwinsMod.instance.Settings.OneMoreChance;
+        var extraChance = RimTwinsMod.Instance.Settings.OneMoreChance;
         if (mother.genes.HasActiveGene(GeneDefOf.MultipleBirths))
         {
             extraChance *= 2f;
