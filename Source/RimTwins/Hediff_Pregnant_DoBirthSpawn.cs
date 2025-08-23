@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace RimTwins;
@@ -8,8 +7,6 @@ namespace RimTwins;
 [HarmonyPatch(typeof(Hediff_Pregnant), nameof(Hediff_Pregnant.DoBirthSpawn))]
 public static class Hediff_Pregnant_DoBirthSpawn
 {
-    private static bool currentlySpawning;
-
     public static void Postfix(Pawn mother, Pawn father)
     {
         if (!mother.RaceProps.Humanlike || !ModsConfig.BiotechActive)
@@ -17,20 +14,14 @@ public static class Hediff_Pregnant_DoBirthSpawn
             return;
         }
 
-        if (currentlySpawning)
+        if (RimTwins.CurrentlySpawning)
         {
             return;
         }
 
-        currentlySpawning = true;
+        RimTwins.CurrentlySpawning = true;
         var num = 1;
-        var extraChance = RimTwinsMod.Instance.Settings.OneMoreChance;
-        if (mother.genes.HasActiveGene(GeneDefOf.MultipleBirths))
-        {
-            extraChance *= 2f;
-        }
-
-        extraChance = Mathf.Clamp(extraChance, 0.001f, 0.75f);
+        var extraChance = RimTwins.GetBirthChance(mother);
 
         while (Rand.Chance(extraChance))
         {
@@ -38,7 +29,7 @@ public static class Hediff_Pregnant_DoBirthSpawn
             num++;
         }
 
-        currentlySpawning = false;
+        RimTwins.CurrentlySpawning = false;
 
         if (num == 1)
         {

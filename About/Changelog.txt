@@ -1,5 +1,8 @@
 # Changelog for RimTwins
 
+1.6.1 - Added correct patch for humanoids, thanks Halicade
+
+
 1.6.0 - Mod updated for 1.6 and passed autotests
 
 
