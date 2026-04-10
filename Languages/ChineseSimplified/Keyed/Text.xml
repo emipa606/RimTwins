@@ -6,4 +6,6 @@
   <RiTw.OneMoreChance>另一个孩子出生的递推概率：{0}</RiTw.OneMoreChance>
   <RiTw.OneMoreChanceTT>多生一个孩子的几率。每多生一个孩子后，都要重新计算一次。</RiTw.OneMoreChanceTT>
   <RiTw.ModVersion>已安装模块版本：{0}</RiTw.ModVersion>
+  <RiTw.AffectAnimals>也影响动物</RiTw.AffectAnimals>
+  <RiTw.AffectAnimalsTT>启用后，多重出生机制也将适用于动物。默认情况下，只有类似人类的棋子会受到影响。</RiTw.AffectAnimalsTT>
 </LanguageData>

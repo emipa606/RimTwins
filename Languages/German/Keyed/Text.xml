@@ -6,4 +6,6 @@
   <RiTw.OneMoreChance>Rekursive Chance, dass ein weiteres Kind geboren wird: {0}</RiTw.OneMoreChance>
   <RiTw.OneMoreChanceTT>Die Wahrscheinlichkeit, dass ein weiteres Kind geboren wird. Diese wird nach jedem weiteren Kind neu berechnet.</RiTw.OneMoreChanceTT>
   <RiTw.ModVersion>Installierte Mod-Version: {0}</RiTw.ModVersion>
+  <RiTw.AffectAnimals>Betrifft auch Tiere</RiTw.AffectAnimals>
+  <RiTw.AffectAnimalsTT>Wenn aktiviert, wird die Mechanik der Mehrfachgeburt auch auf Tiere angewendet. Standardmäßig sind nur menschenähnliche Spielfiguren betroffen.</RiTw.AffectAnimalsTT>
 </LanguageData>

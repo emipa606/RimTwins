@@ -6,4 +6,13 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="RimTwins/Twinsmodwithharmony.csproj" />
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/">
+    <File Path="../1.6/Defs/OneMore.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/Text.xml" />
+  </Folder>
 </Solution>

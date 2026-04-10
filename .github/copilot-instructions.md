@@ -1,65 +1,55 @@
-# GitHub Copilot Instructions for RimTwins Mod Development
+# GitHub Copilot Instructions for RimTwins (Continued)
 
 ## Mod Overview and Purpose
 
-**RimTwins (Continued)** is a mod for RimWorld that enhances the game's pregnancy and childbirth mechanics by allowing pawns to give birth to twins, triplets, or even quadruplets. This update is a continuation of the original mod by spijkermennos, with new features and improvements to provide a more dynamic and customizable gameplay experience.
-
-### Mod Purpose:
-- Allow colonists to give birth to multiple children (twins, triplets, quadruplets)
-- Increase player customization with mod options and genetic enhancements
+**RimTwins (Continued)** is a mod for the game RimWorld that enhances its birth mechanics by allowing pawns to give birth to twins, triplets, or quadruplets. This mod is an update to the original mod by spijkermennos and introduces more flexible calculations for multiple births instead of relying solely on set values. Players can adjust the chances of multiple births through mod options, and a new gene system has been added to increase the chances of having multiple births. By integrating these changes, RimTwins provides a richer and more dynamic experience in the aspect of reproduction mechanics.
 
 ## Key Features and Systems
 
-1. **Recursive Calculation for Births**: 
-   - Instead of using set values, the mod employs a recursive approach for calculating multiple births.
-   
-2. **Mod Options**:
-   - Players can configure the chances of multiple births through the mod settings menu. Default chances are set as:
-     - Twins: 5%
-     - Triplets: 1%
-     - Quadruplets: 0.5%
-   
-3. **Genetic Enhancement**:
-   - Introduces a gene that increases the probability of a pawn to have multiple births.
-   
-4. **Non-Invasive Birth Code**:
-   - Instead of overriding the game's birth mechanism, the mod simply calls the birth process again when necessary, preserving base game features.
-   
-5. **Localization Support**:
-   - Added translation strings to support multiple languages.
+- Recursive calculation for determining the number of births in a single pregnancy.
+- Mod options for players to customize the chances of multiple births:
+  - Twins: 5%
+  - Triplets: 1%
+  - Quadruplets: 0.5%
+- A gene that increases the likelihood of giving birth to multiple children.
+- The mod retains the original RimWorld birth code and calls it recursively to manage multiple births.
+- Added translation strings for internationalization.
 
 ## Coding Patterns and Conventions
 
-- **Static Classes for Definitions**: Use static classes such as `GeneDefOf` for defining gene definitions.
-- **Internal Class Use**: Classes such as `RimTwinsMod` and `RimTwinsSettings` are marked internal for encapsulation within the assembly while keeping them manageable.
-- **ModSettings Inheritance**: `RimTwinsSettings` inherits from `ModSettings`, following RimWorld's pattern for settings management.
+- Follows C# practices and conventions with classes being clearly defined as `public`, `internal`, or `static` where appropriate.
+- Utilizes a consistent naming scheme for classes and methods that reflect their purpose and functionality.
+- Separates functionalities across different files and classes, ensuring modular code structure:
+  - `GeneDefOf.cs` for gene definitions.
+  - `Hediff_Pregnant_DoBirthSpawn.cs` for handling birth spawning logic.
+  - `RimTwins.cs` and `RimTwinsMod.cs` for main mod logic and initialization.
+  - `RimTwinsSettings.cs` for storing mod configuration settings.
 
 ## XML Integration
 
-- RimWorld utilizes XML for defining game data such as genes, hediffs, and more. Ensure that all XML files are well-documented and validate their structure against RimWorld's XML schema.
-- Leverage `<Defs>` to extend or add new definitions where needed (e.g., adding new gene definitions).
+- XML files may be used for defining mod configurations and translations. Ensure these files are properly formatted and placed in the `Defs` folder within the mod directory.
+- Utilize `<translation>` tags within XML for different languages to support localization.
 
 ## Harmony Patching
 
-- **Setup**: Use Harmony for safe and non-destructive method patching. This ensures compatibility with other mods and the base game.
-- **Example**: In `Hediff_Pregnant_DoBirthSpawn`, apply Harmony patches to methods related to childbirth to introduce recursive birth calls.
-- **Safety**: Always check for null values and potential side effects before making modifications to game methods.
+- Harmony is employed to patch the game's existing methods to insert the mod's functionality seamlessly.
+- Ensure patches are non-destructive and maintain compatibility with other mods by using conditional postfix techniques.
 
 ## Suggestions for Copilot
 
-1. **Error Handling**: Automatically suggest adding error handling or null checks in critical sections of code, particularly within recursion or when interfacing with mod settings.
+When leveraging GitHub Copilot to contribute or extend RimTwins, consider the following:
 
-2. **Commenting and Documentation**: Encourage comments and XML documentation tags in code areas that involve complex logic or recursive methods to aid future developers and Copilot recommendations.
+- **Suggest Methods**: Craft methods that extend existing functionality without duplicating code. Use Copilot's capability to suggest recursive calls and conditionals.
+- **Refactor and Optimize**: Use Copilot to propose optimizations and refactors of existing lengthy methods, focusing on readability and performance.
+- **Gene System Enhancements**: If expanding the gene functionality, utilize Copilot to suggest implementations that integrate seamlessly with existing gene assignment mechanics in RimWorld.
+- **Localization**: Encourage suggestions related to adding or updating translation strings in XML files for better internationalization support.
+- **Testing and Debugging**: Leverage Copilot for suggesting unit tests and debugging practices to maintain high code quality and catch potential issues early.
 
-3. **Gene Implementation Collaboration**: Highlight areas where collaboration might enhance mod features, such as gene implementation, and suggest code snippets or documentation links for further study.
+By following these structured guidelines, contributors can ensure consistent development practices and maximize the effectiveness of their collaboration on the RimTwins mod.
 
-4. **Localization**: Suggest adding localization capabilities to new strings or gameplay elements introduced in the code to enhance accessibility.
-
-
-### Contact and Collaboration
-
-For questions, suggestions, or collaborative opportunities related to the integration of genes or other mod features, please contact us via direct message.
-
----
-
-This file provides guidelines for using GitHub Copilot with the RimTwins mod project. Please ensure that all contributions adhere to these instructions to maintain code quality and mod integrity.
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The .github/copilot-instructions.md file is included in the solution under the .github solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution .github copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.

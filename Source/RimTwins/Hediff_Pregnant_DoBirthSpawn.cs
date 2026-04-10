@@ -9,7 +9,12 @@ public static class Hediff_Pregnant_DoBirthSpawn
 {
     public static void Postfix(Pawn mother, Pawn father)
     {
-        if (!mother.RaceProps.Humanlike || !ModsConfig.BiotechActive)
+        if (!ModsConfig.BiotechActive)
+        {
+            return;
+        }
+
+        if (!mother.RaceProps.Humanlike && !RimTwinsMod.Instance.Settings.AffectAnimals)
         {
             return;
         }

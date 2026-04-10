@@ -52,6 +52,9 @@ internal class RimTwinsMod : Mod
         Settings.OneMoreChance = listingStandard.SliderLabeled(
             "RiTw.OneMoreChance".Translate(Settings.OneMoreChance.ToStringPercent()), Settings.OneMoreChance, 0.001f,
             0.5f, tooltip: "RiTw.OneMoreChanceTT".Translate());
+        listingStandard.Gap();
+        listingStandard.CheckboxLabeled("RiTw.AffectAnimals".Translate(), ref Settings.AffectAnimals,
+            "RiTw.AffectAnimalsTT".Translate());
         if (currentVersion != null)
         {
             listingStandard.Gap();

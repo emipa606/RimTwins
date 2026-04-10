@@ -7,6 +7,7 @@ namespace RimTwins;
 /// </summary>
 internal class RimTwinsSettings : ModSettings
 {
+    public bool AffectAnimals;
     public float OneMoreChance = 0.05f;
 
     /// <summary>
@@ -16,5 +17,6 @@ internal class RimTwinsSettings : ModSettings
     {
         base.ExposeData();
         Scribe_Values.Look(ref OneMoreChance, "OneMoreChance", 0.05f);
+        Scribe_Values.Look(ref AffectAnimals, "AffectAnimals");
     }
 }

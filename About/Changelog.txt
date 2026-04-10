@@ -1,5 +1,9 @@
 # Changelog for RimTwins
 
+1.6.2 - Added mod option controlling if animals should also be affected
+Used DeepL to update translations for ChineseSimplified, French, German
+
+
 1.6.1 - Added correct patch for humanoids, thanks Halicade
 
 

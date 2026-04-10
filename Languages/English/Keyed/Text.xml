@@ -4,5 +4,7 @@
   <RiTw.SingleBaby>{0} gave birth to a baby!</RiTw.SingleBaby>
   <RiTw.OneMoreChance>Recursive chance of another child born: {0}</RiTw.OneMoreChance>
   <RiTw.OneMoreChanceTT>The chance that an extra child will be born. This will be calculated again after each extra child.</RiTw.OneMoreChanceTT>
+  <RiTw.AffectAnimals>Also affect animals</RiTw.AffectAnimals>
+  <RiTw.AffectAnimalsTT>When enabled, the multiple birth mechanic will also apply to animals. By default only humanlike pawns are affected.</RiTw.AffectAnimalsTT>
   <RiTw.ModVersion>Installed mod-version: {0}</RiTw.ModVersion>
 </LanguageData>
